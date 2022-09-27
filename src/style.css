@@ -37,6 +37,10 @@ body {
   padding: 1rem;
 }
 
+.todo__title h3 {
+  font-weight: 400;
+}
+
 .fa-arrows-rotate {
   font-size: 14px;
   color: var(--clr-light);
