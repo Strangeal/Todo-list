@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  --clr-white: #fff;
+  --clr-dark: #000;
+  --clr-gray: #3d3d3d;
+  --clr-light: #e0e0e0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin-top: 5rem;
+}
+
+.todo {
+  background: var(--clr-white);
+  width: 100%;
+  max-width: 40rem;
+  margin: auto;
+  box-shadow: 0 0 6px 3px #5e5d5d6f;
+}
+
+.todo__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.todo__title h3 {
+  font-weight: 400;
+}
+
+.fa-arrows-rotate {
+  font-size: 14px;
+  color: var(--clr-light);
+}
+
+.todo__input {
+  border: none;
+  outline: none;
+  width: 94%;
+  padding: 1rem;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.fa-turn-down {
+  transform: rotate(90deg);
+  color: var(--clr-light);
+  font-size: 10px;
+}
+
+.fa-arrows-rotate:hover,
+.fa-turn-down:hover {
+  color: var(--clr-gray);
+}
+
+.todo__form__list {
+  padding: 1rem;
+}
+
+.todo__label {
+  font-weight: 300;
+}
+
+.fa-ellipsis {
+  float: right;
+  transform: rotate(90deg);
+  color: var(--clr-light);
+}
+
+.fa-ellipsis:hover {
+  color: var(--clr-gray);
+  cursor: move;
+}
+
+.todo-btn {
+  display: flex;
+  justify-content: center;
+  padding: 1.2rem 0;
+}
+
+.todo__clear {
+  border: none;
+  background: none;
+  color: var(--clr-gray);
+  font-size: 1rem;
+}
+
+.todo__clear:hover {
+  color: red;
+  text-decoration: underline;
+}
