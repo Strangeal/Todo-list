@@ -8,26 +8,23 @@
   <title>TODO List</title>
 <script defer src="runtime.js"></script><script defer src="index.js"></script></head>
 <body>
-  <main>
-    <div class="todo">
-      <div class="todo__header">
-        <div class="todo__title">
-          <h3>TODO</h3>
-          <a href="#"><i class="fa-solid fa-arrows-rotate"></i></a>
-        </div><hr>
-          <div class="todo__input__item">
-            <input class="todo__input" type="text" placeholder="Add to your list">
-            <a href="#"><i class="fa-solid fa-turn-down"></i></a>
-          </div><hr>
-      </div>
-      <!-- todo-body -->
-      <div class="todo__body">
-        <form class="todo__form"></form> <!--Dedicated placeholder for dynamic rendring-->
-      </div>
+  <main class="container">
+    <section class="create-todo">
+      <div class="todo-header">
+        <h3>TODO LIST</h3>
+      </div><hr>
+        <form id="new-todo-form">
+            <input type="text" placeholder="Add to list" name="content" id="content"/>
+        </form><hr>
+      </section>
+        <!-- Todo List -->
+		<section class="todo-list">
+			
+			<div class="list" id="todo-list"></div>
+		</section>
       <div class="todo-btn">
         <button type="button" class="todo__clear">Clear all completed</button>
       </div>
-    </div>
   </main>
 </body>
 </html>
