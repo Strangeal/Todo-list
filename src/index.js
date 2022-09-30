@@ -51,7 +51,7 @@ export default function DisplayTodos() {
       DisplayTodos();
     });
 
-    // // Content edit
+    // Content edit
     inputEl.addEventListener('click', () => {
       inputEl.removeAttribute('readonly');
       inputEl.focus();
