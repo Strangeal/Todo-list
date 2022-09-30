@@ -1,18 +1,17 @@
 // import { endsWith } from 'lodash';
+import * as window from './modules/save_localStoreage.js'; // eslint-disable-line
 import './style.css';
 
 let todos = JSON.parse(localStorage.getItem('localStore')) || [];
-function DisplayTodos() {
+export default function DisplayTodos() {
   const todoList = document.querySelector('#todo-list');
   todoList.innerHTML = '';
 
   todos.forEach((todo) => {
     const todoItem = document.createElement('div');
     todoItem.classList.add('todo-item');
-
     const label = document.createElement('label');
     const input = document.createElement('input');
-
     const content = document.createElement('div');
     const actions = document.createElement('div');
     const trashIcon = document.createElement('i');
@@ -37,11 +36,13 @@ function DisplayTodos() {
     if (todo.completed) {
       todoItem.classList.add('done');
     }
+    // Update user input on change
     const inputEl = content.querySelector('input');
     input.addEventListener('change', (e) => {
       todo.completed = e.target.checked;
       localStorage.setItem('localStore', JSON.stringify(todos));
 
+      // Add lineThrough class on box checked
       if (todo.completed) {
         todoItem.classList.add('done');
       } else {
@@ -50,7 +51,7 @@ function DisplayTodos() {
       DisplayTodos();
     });
 
-    // Content edit
+    // // Content edit
     inputEl.addEventListener('click', () => {
       inputEl.removeAttribute('readonly');
       inputEl.focus();
@@ -83,26 +84,3 @@ function DisplayTodos() {
     });
   });
 }
-
-window.addEventListener('load', () => {
-  const todos = JSON.parse(localStorage.getItem('localStore')) || [];
-  const newTodoForm = document.querySelector('#new-todo-form');
-
-  newTodoForm.addEventListener('submit', (e) => {
-    // e.preventDefault();
-
-    const todo = {
-      content: e.target.elements.content.value,
-      completed: false,
-    };
-
-    todos.push(todo);
-    localStorage.setItem('localStore', JSON.stringify(todos));
-
-    // Reset the form
-    e.target.reset();
-    DisplayTodos();
-  });
-
-  DisplayTodos();
-});
